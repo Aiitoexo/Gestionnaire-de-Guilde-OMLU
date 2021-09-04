@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +16,6 @@ use Inertia\Inertia;
 */
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+});
