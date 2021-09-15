@@ -5209,6 +5209,10 @@ select {
   grid-column: 1 / -1;
 }
 
+.col-span-13 {
+  grid-column: span 13 / span 13;
+}
+
 .col-start-1 {
   grid-column-start: 1;
 }
@@ -11693,6 +11697,10 @@ select {
 
 .grid-cols-12 {
   grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.grid-cols-13 {
+  grid-template-columns: repeat(13, minmax(0, 1fr));
 }
 
 .grid-cols-none {
@@ -37799,6 +37807,10 @@ select {
     grid-column: 1 / -1;
   }
 
+  .sm\:col-span-13 {
+    grid-column: span 13 / span 13;
+  }
+
   .sm\:col-start-1 {
     grid-column-start: 1;
   }
@@ -44217,6 +44229,10 @@ select {
 
   .sm\:grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .sm\:grid-cols-13 {
+    grid-template-columns: repeat(13, minmax(0, 1fr));
   }
 
   .sm\:grid-cols-none {
@@ -70311,6 +70327,10 @@ select {
     grid-column: 1 / -1;
   }
 
+  .md\:col-span-13 {
+    grid-column: span 13 / span 13;
+  }
+
   .md\:col-start-1 {
     grid-column-start: 1;
   }
@@ -76729,6 +76749,10 @@ select {
 
   .md\:grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-13 {
+    grid-template-columns: repeat(13, minmax(0, 1fr));
   }
 
   .md\:grid-cols-none {
@@ -102823,6 +102847,10 @@ select {
     grid-column: 1 / -1;
   }
 
+  .lg\:col-span-13 {
+    grid-column: span 13 / span 13;
+  }
+
   .lg\:col-start-1 {
     grid-column-start: 1;
   }
@@ -109241,6 +109269,10 @@ select {
 
   .lg\:grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-13 {
+    grid-template-columns: repeat(13, minmax(0, 1fr));
   }
 
   .lg\:grid-cols-none {
@@ -135335,6 +135367,10 @@ select {
     grid-column: 1 / -1;
   }
 
+  .xl\:col-span-13 {
+    grid-column: span 13 / span 13;
+  }
+
   .xl\:col-start-1 {
     grid-column-start: 1;
   }
@@ -141753,6 +141789,10 @@ select {
 
   .xl\:grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .xl\:grid-cols-13 {
+    grid-template-columns: repeat(13, minmax(0, 1fr));
   }
 
   .xl\:grid-cols-none {
@@ -167847,6 +167887,10 @@ select {
     grid-column: 1 / -1;
   }
 
+  .\32xl\:col-span-13 {
+    grid-column: span 13 / span 13;
+  }
+
   .\32xl\:col-start-1 {
     grid-column-start: 1;
   }
@@ -174265,6 +174309,10 @@ select {
 
   .\32xl\:grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .\32xl\:grid-cols-13 {
+    grid-template-columns: repeat(13, minmax(0, 1fr));
   }
 
   .\32xl\:grid-cols-none {

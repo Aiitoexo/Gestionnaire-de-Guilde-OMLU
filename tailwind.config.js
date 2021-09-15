@@ -15,6 +15,13 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+            gridTemplateColumns: {
+                // Simple 16 column grid
+                '13': 'repeat(13, minmax(0, 1fr))',
+            },
+            gridColumn: {
+                'span-13': 'span 13 / span 13',
+            }
         },
     },
 

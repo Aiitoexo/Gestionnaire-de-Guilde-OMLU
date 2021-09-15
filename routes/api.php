@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Api\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth.basic_token')->group(function () {
+
+    Route::post('add-gold', [DashboardController::class, 'addGold']);
+    Route::post('remove-gold', [DashboardController::class, 'reduceGold']);
+    Route::post('balance_gold', [DashboardController::class, 'solde']);
+
+    Route::post('show_resource_category', [DashboardController::class, 'resourceCategory']);
+    Route::post('show_items_category', [DashboardController::class, 'itemsCategory']);
+
 });
+

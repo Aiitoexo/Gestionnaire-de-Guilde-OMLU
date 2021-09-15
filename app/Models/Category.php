@@ -15,6 +15,6 @@ class Category extends Model
 
     public function resource()
     {
-        return $this->hasMany(Resource::class, 'category_id');
+        return $this->hasMany(Resource::class, 'category_id')->with('rarity')->with('tier');
     }
 }

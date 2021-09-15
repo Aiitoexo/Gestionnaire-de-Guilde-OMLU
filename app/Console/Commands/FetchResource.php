@@ -41,25 +41,27 @@ class FetchResource extends Command
     public function handle()
     {
         $all_pages = [
-            'https://newworldfans.com/db/category/Resource/Bait?page=1&attributes=&perks=&sort=name&dir=asc',
-            'https://newworldfans.com/db/category/Resource/Block?page=1&attributes=&perks=&sort=name&dir=asc',
-            'https://newworldfans.com/db/category/Resource/Cloth?page=1&attributes=&perks=&sort=name&dir=asc',
+//            'https://newworldfans.com/db/category/Resource/Bait?page=1&attributes=&perks=&sort=name&dir=asc',
+//            'https://newworldfans.com/db/category/Resource/Fish?page=1&attributes=&perks=&sort=name&dir=asc',
+//            'https://newworldfans.com/db/category/Resource/Fish?page=2&attributes=&perks=&sort=name&dir=asc',
+//            'https://newworldfans.com/db/category/Resource/Gem?page=1&attributes=&perks=&sort=name&dir=asc',
+//            'https://newworldfans.com/db/category/Resource/Gem?page=2&attributes=&perks=&sort=name&dir=asc',
+//            'https://newworldfans.com/db/category/Resource/Gem?page=3&attributes=&perks=&sort=name&dir=asc',
+//            'https://newworldfans.com/db/category/Resource/Stone?page=1&attributes=&perks=&sort=name&dir=asc',
+//            'https://newworldfans.com/db/category/Resource/Ore?page=1&attributes=&perks=&sort=name&dir=asc',
+//            'https://newworldfans.com/db/category/Resource/Rawhide?page=1&attributes=&perks=&sort=name&dir=asc',
+//            'https://newworldfans.com/db/category/Resource/Wood?page=1&attributes=&perks=&sort=name&dir=asc',
             'https://newworldfans.com/db/category/Resource/Fiber?page=1&attributes=&perks=&sort=name&dir=asc',
-            'https://newworldfans.com/db/category/Resource/Fish?page=1&attributes=&perks=&sort=name&dir=asc',
-            'https://newworldfans.com/db/category/Resource/Fish?page=2&attributes=&perks=&sort=name&dir=asc',
-            'https://newworldfans.com/db/category/Resource/Gem?page=1&attributes=&perks=&sort=name&dir=asc',
-            'https://newworldfans.com/db/category/Resource/Gem?page=2&attributes=&perks=&sort=name&dir=asc',
-            'https://newworldfans.com/db/category/Resource/Gem?page=3&attributes=&perks=&sort=name&dir=asc',
-            'https://newworldfans.com/db/category/Resource/Ingot?page=1&attributes=&perks=&sort=name&dir=asc',
-            'https://newworldfans.com/db/category/Resource/Leather?page=1&attributes=&perks=&sort=name&dir=asc',
-            'https://newworldfans.com/db/category/Resource/Ore?page=1&attributes=&perks=&sort=name&dir=asc',
-            'https://newworldfans.com/db/category/Resource/Rawhide?page=1&attributes=&perks=&sort=name&dir=asc',
-            'https://newworldfans.com/db/category/Resource/Stone?page=1&attributes=&perks=&sort=name&dir=asc',
-            'https://newworldfans.com/db/category/Resource/Timber?page=1&attributes=&perks=&sort=name&dir=asc',
-            'https://newworldfans.com/db/category/Resource/Wood?page=1&attributes=&perks=&sort=name&dir=asc',
+//            'https://newworldfans.com/db/category/Resource/Block?page=1&attributes=&perks=&sort=name&dir=asc',
+//            'https://newworldfans.com/db/category/Resource/Ingot?page=1&attributes=&perks=&sort=name&dir=asc',
+//            'https://newworldfans.com/db/category/Resource/Leather?page=1&attributes=&perks=&sort=name&dir=asc',
+//            'https://newworldfans.com/db/category/Resource/Timber?page=1&attributes=&perks=&sort=name&dir=asc',
+//            'https://newworldfans.com/db/category/Resource/Cloth?page=1&attributes=&perks=&sort=name&dir=asc',
         ];
 
         $array_data = [];
+
+        $all_data_resource = DataResource::all();
 
         foreach ($all_pages as $page) {
             $response = Http::acceptJson()->get($page);
@@ -69,16 +71,20 @@ class FetchResource extends Command
             $all_items = $response['subjects']['data'];
 
             $category = [];
-
+dd($all_items);
             foreach ($all_items as $item) {
 
                 $data = [];
 
-                $name = DataResource::where('key', '=', $item['attributes']['icon_path'])->first();
+                foreach ($all_data_resource as $data_resource) {
+                    if (str_contains($data_resource->key, $item['attributes']['icon_path']) && str_contains($data_resource->key, 'MasterName')) {
+                        $name = $data_resource->name;
+                    }
+                }
 
-                if ($name !== null && str_contains($item['attributes']['slug'], 'ingot') && $item['attributes']['item_class_en'] === 'Ingot') {
+                if ($name !== null && str_contains($item['attributes']['slug'], 'ingot') && $item['attributes']['item_class_en'] === 'Ingot' && !str_contains($item['attributes']['slug'], 'fae')) {
 
-                    $data['name'] = $name->name;
+                    $data['name'] = $name;
                     $data['category_id'] = $item['attributes']['item_class_en'];
 
                     switch ($data['category_id']) {
@@ -89,37 +95,41 @@ class FetchResource extends Command
                             $data['category_id'] = 2;
                             break;
                         case 'Gem':
-                            $data['category_id'] = 3;
+                            if (str_contains( $item['attributes']['slug'], 'cut')) {
+                                $data['category_id'] = 4;
+                            } else {
+                                $data['category_id'] = 3;
+                            }
                             break;
                         case 'Stone':
-                            $data['category_id'] = 4;
-                            break;
-                        case 'Ore':
                             $data['category_id'] = 5;
                             break;
-                        case 'Rawhide':
+                        case 'Ore':
                             $data['category_id'] = 6;
                             break;
-                        case 'Wood':
+                        case 'Rawhide':
                             $data['category_id'] = 7;
                             break;
-                        case 'Fiber':
+                        case 'Wood':
                             $data['category_id'] = 8;
                             break;
-                        case 'Block':
+                        case 'Fiber':
                             $data['category_id'] = 9;
                             break;
-                        case 'Ingot':
+                        case 'Block':
                             $data['category_id'] = 10;
                             break;
-                        case 'Leather':
+                        case 'Ingot':
                             $data['category_id'] = 11;
                             break;
-                        case 'Timber':
+                        case 'Leather':
                             $data['category_id'] = 12;
                             break;
-                        case 'Cloth':
+                        case 'Timber':
                             $data['category_id'] = 13;
+                            break;
+                        case 'Cloth':
+                            $data['category_id'] = 14;
                             break;
                     }
 
@@ -150,9 +160,9 @@ class FetchResource extends Command
 
                     array_push($array_data, $data);
 
-                } elseif ($name !== null && !str_contains($item['attributes']['slug'], 'ingot') && $item['attributes']['item_class_en'] !== 'Ingot') {
+                } elseif ($name !== null && !str_contains($item['attributes']['slug'], 'ingot') && $item['attributes']['item_class_en'] !== 'Ingot' && !str_contains($item['attributes']['slug'], 'fae')) {
 
-                    $data['name'] = $name->name;
+                    $data['name'] = $name;
                     $data['category_id'] = $item['attributes']['item_class_en'];
 
                     switch ($data['category_id']) {
@@ -163,37 +173,41 @@ class FetchResource extends Command
                             $data['category_id'] = 2;
                             break;
                         case 'Gem':
-                            $data['category_id'] = 3;
+                            if (str_contains( $item['attributes']['slug'], 'cut')) {
+                                $data['category_id'] = 4;
+                            } else {
+                                $data['category_id'] = 3;
+                            }
                             break;
                         case 'Stone':
-                            $data['category_id'] = 4;
-                            break;
-                        case 'Ore':
                             $data['category_id'] = 5;
                             break;
-                        case 'Rawhide':
+                        case 'Ore':
                             $data['category_id'] = 6;
                             break;
-                        case 'Wood':
+                        case 'Rawhide':
                             $data['category_id'] = 7;
                             break;
-                        case 'Fiber':
+                        case 'Wood':
                             $data['category_id'] = 8;
                             break;
-                        case 'Block':
+                        case 'Fiber':
                             $data['category_id'] = 9;
                             break;
-                        case 'Ingot':
+                        case 'Block':
                             $data['category_id'] = 10;
                             break;
-                        case 'Leather':
+                        case 'Ingot':
                             $data['category_id'] = 11;
                             break;
-                        case 'Timber':
+                        case 'Leather':
                             $data['category_id'] = 12;
                             break;
-                        case 'Cloth':
+                        case 'Timber':
                             $data['category_id'] = 13;
+                            break;
+                        case 'Cloth':
+                            $data['category_id'] = 14;
                             break;
                     }
 
@@ -227,6 +241,7 @@ class FetchResource extends Command
             }
 
         }
+        dd($array_data);
 
         foreach ($array_data as $item) {
             $exists = Resource::where('name', '=', $item['name'])->exists();

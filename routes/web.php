@@ -18,4 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::post('/reduce', [DashboardController::class, 'remove'])->name('dashboard.remove');
+    Route::post('/add', [DashboardController::class, 'add'])->name('dashboard.add');
+    Route::post('/add-gold', [DashboardController::class, 'addGold'])->name('dashboard.add.gold');
+    Route::post('/reduce-gold', [DashboardController::class, 'reduceGold'])->name('dashboard.reduce.gold');
 });
