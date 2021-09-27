@@ -23,5 +23,8 @@ Route::middleware('auth.basic_token')->group(function () {
     Route::post('show_resource_category', [DashboardController::class, 'resourceCategory']);
     Route::post('show_items_category', [DashboardController::class, 'itemsCategory']);
 
+    Route::post('add-user', [DashboardController::class, 'addDiscordUser']);
+
+    Route::post('contribution', [DashboardController::class, 'displayContribution']);
 });
 

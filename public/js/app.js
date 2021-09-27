@@ -43494,37 +43494,101 @@ var map = {
 		"./resources/js/Pages/Auth/VerifyEmail.vue",
 		"resources_js_Pages_Auth_VerifyEmail_vue"
 	],
-	"./Dashboard/Components/GoldHistory": [
-		"./resources/js/Pages/Dashboard/Components/GoldHistory.vue",
-		"resources_js_Pages_Dashboard_Components_GoldHistory_vue"
+	"./Bank/Bank": [
+		"./resources/js/Pages/Bank/Bank.vue",
+		"resources_js_Pages_Bank_Bank_vue"
 	],
-	"./Dashboard/Components/GoldHistory.vue": [
-		"./resources/js/Pages/Dashboard/Components/GoldHistory.vue",
-		"resources_js_Pages_Dashboard_Components_GoldHistory_vue"
+	"./Bank/Bank.vue": [
+		"./resources/js/Pages/Bank/Bank.vue",
+		"resources_js_Pages_Bank_Bank_vue"
 	],
-	"./Dashboard/Components/ItemCard": [
-		"./resources/js/Pages/Dashboard/Components/ItemCard.vue",
-		"resources_js_Pages_Dashboard_Components_ItemCard_vue"
+	"./Bank/Components/GoldHistory": [
+		"./resources/js/Pages/Bank/Components/GoldHistory.vue",
+		"resources_js_Pages_Bank_Components_GoldHistory_vue"
 	],
-	"./Dashboard/Components/ItemCard.vue": [
-		"./resources/js/Pages/Dashboard/Components/ItemCard.vue",
-		"resources_js_Pages_Dashboard_Components_ItemCard_vue"
+	"./Bank/Components/GoldHistory.vue": [
+		"./resources/js/Pages/Bank/Components/GoldHistory.vue",
+		"resources_js_Pages_Bank_Components_GoldHistory_vue"
 	],
-	"./Dashboard/Components/ResourceButton": [
-		"./resources/js/Pages/Dashboard/Components/ResourceButton.vue",
-		"resources_js_Pages_Dashboard_Components_ResourceButton_vue"
+	"./Bank/Components/ItemCard": [
+		"./resources/js/Pages/Bank/Components/ItemCard.vue",
+		"resources_js_Pages_Bank_Components_ItemCard_vue"
 	],
-	"./Dashboard/Components/ResourceButton.vue": [
-		"./resources/js/Pages/Dashboard/Components/ResourceButton.vue",
-		"resources_js_Pages_Dashboard_Components_ResourceButton_vue"
+	"./Bank/Components/ItemCard.vue": [
+		"./resources/js/Pages/Bank/Components/ItemCard.vue",
+		"resources_js_Pages_Bank_Components_ItemCard_vue"
 	],
-	"./Dashboard/Components/ResourceHistory": [
-		"./resources/js/Pages/Dashboard/Components/ResourceHistory.vue",
-		"resources_js_Pages_Dashboard_Components_ResourceHistory_vue"
+	"./Bank/Components/ResourceButton": [
+		"./resources/js/Pages/Bank/Components/ResourceButton.vue",
+		"resources_js_Pages_Bank_Components_ResourceButton_vue"
 	],
-	"./Dashboard/Components/ResourceHistory.vue": [
-		"./resources/js/Pages/Dashboard/Components/ResourceHistory.vue",
-		"resources_js_Pages_Dashboard_Components_ResourceHistory_vue"
+	"./Bank/Components/ResourceButton.vue": [
+		"./resources/js/Pages/Bank/Components/ResourceButton.vue",
+		"resources_js_Pages_Bank_Components_ResourceButton_vue"
+	],
+	"./Bank/Components/ResourceHistory": [
+		"./resources/js/Pages/Bank/Components/ResourceHistory.vue",
+		"resources_js_Pages_Bank_Components_ResourceHistory_vue"
+	],
+	"./Bank/Components/ResourceHistory.vue": [
+		"./resources/js/Pages/Bank/Components/ResourceHistory.vue",
+		"resources_js_Pages_Bank_Components_ResourceHistory_vue"
+	],
+	"./Components/NavBar/NavBar": [
+		"./resources/js/Pages/Components/NavBar/NavBar.vue",
+		"resources_js_Pages_Components_NavBar_NavBar_vue"
+	],
+	"./Components/NavBar/NavBar.vue": [
+		"./resources/js/Pages/Components/NavBar/NavBar.vue",
+		"resources_js_Pages_Components_NavBar_NavBar_vue"
+	],
+	"./Contribution/Components/ContributionCustom": [
+		"./resources/js/Pages/Contribution/Components/ContributionCustom.vue",
+		"resources_js_Pages_Contribution_Components_ContributionCustom_vue"
+	],
+	"./Contribution/Components/ContributionCustom.vue": [
+		"./resources/js/Pages/Contribution/Components/ContributionCustom.vue",
+		"resources_js_Pages_Contribution_Components_ContributionCustom_vue"
+	],
+	"./Contribution/Components/ContributionGold": [
+		"./resources/js/Pages/Contribution/Components/ContributionGold.vue",
+		"resources_js_Pages_Contribution_Components_ContributionGold_vue"
+	],
+	"./Contribution/Components/ContributionGold.vue": [
+		"./resources/js/Pages/Contribution/Components/ContributionGold.vue",
+		"resources_js_Pages_Contribution_Components_ContributionGold_vue"
+	],
+	"./Contribution/Components/ContributionGuild": [
+		"./resources/js/Pages/Contribution/Components/ContributionGuild.vue",
+		"resources_js_Pages_Contribution_Components_ContributionGuild_vue"
+	],
+	"./Contribution/Components/ContributionGuild.vue": [
+		"./resources/js/Pages/Contribution/Components/ContributionGuild.vue",
+		"resources_js_Pages_Contribution_Components_ContributionGuild_vue"
+	],
+	"./Contribution/Components/ContributionItem": [
+		"./resources/js/Pages/Contribution/Components/ContributionItem.vue",
+		"resources_js_Pages_Contribution_Components_ContributionItem_vue"
+	],
+	"./Contribution/Components/ContributionItem.vue": [
+		"./resources/js/Pages/Contribution/Components/ContributionItem.vue",
+		"resources_js_Pages_Contribution_Components_ContributionItem_vue"
+	],
+	"./Contribution/Components/ItemCard": [
+		"./resources/js/Pages/Contribution/Components/ItemCard.vue",
+		"resources_js_Pages_Contribution_Components_ItemCard_vue"
+	],
+	"./Contribution/Components/ItemCard.vue": [
+		"./resources/js/Pages/Contribution/Components/ItemCard.vue",
+		"resources_js_Pages_Contribution_Components_ItemCard_vue"
+	],
+	"./Contribution/Contribution": [
+		"./resources/js/Pages/Contribution/Contribution.vue",
+		"resources_js_Pages_Contribution_Contribution_vue"
+	],
+	"./Contribution/Contribution.vue": [
+		"./resources/js/Pages/Contribution/Contribution.vue",
+		"resources_js_Pages_Contribution_Contribution_vue"
 	],
 	"./Dashboard/Dashboard": [
 		"./resources/js/Pages/Dashboard/Dashboard.vue",
@@ -43533,6 +43597,30 @@ var map = {
 	"./Dashboard/Dashboard.vue": [
 		"./resources/js/Pages/Dashboard/Dashboard.vue",
 		"resources_js_Pages_Dashboard_Dashboard_vue"
+	],
+	"./Squad/Components/HourSquad": [
+		"./resources/js/Pages/Squad/Components/HourSquad.vue",
+		"resources_js_Pages_Squad_Components_HourSquad_vue"
+	],
+	"./Squad/Components/HourSquad.vue": [
+		"./resources/js/Pages/Squad/Components/HourSquad.vue",
+		"resources_js_Pages_Squad_Components_HourSquad_vue"
+	],
+	"./Squad/Components/UserSquad": [
+		"./resources/js/Pages/Squad/Components/UserSquad.vue",
+		"resources_js_Pages_Squad_Components_UserSquad_vue"
+	],
+	"./Squad/Components/UserSquad.vue": [
+		"./resources/js/Pages/Squad/Components/UserSquad.vue",
+		"resources_js_Pages_Squad_Components_UserSquad_vue"
+	],
+	"./Squad/Squad": [
+		"./resources/js/Pages/Squad/Squad.vue",
+		"resources_js_Pages_Squad_Squad_vue"
+	],
+	"./Squad/Squad.vue": [
+		"./resources/js/Pages/Squad/Squad.vue",
+		"resources_js_Pages_Squad_Squad_vue"
 	]
 };
 function webpackAsyncContext(req) {
@@ -43683,7 +43771,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.2","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_API_Index_vue":1,"resources_js_Pages_API_Partials_ApiTokenManager_vue":1,"resources_js_Pages_Auth_ConfirmPassword_vue":1,"resources_js_Pages_Auth_ForgotPassword_vue":1,"resources_js_Pages_Auth_Login_vue":1,"resources_js_Pages_Auth_Register_vue":1,"resources_js_Pages_Auth_ResetPassword_vue":1,"resources_js_Pages_Auth_TwoFactorChallenge_vue":1,"resources_js_Pages_Auth_VerifyEmail_vue":1,"resources_js_Pages_Dashboard_Components_GoldHistory_vue":1,"resources_js_Pages_Dashboard_Components_ItemCard_vue":1,"resources_js_Pages_Dashboard_Components_ResourceButton_vue":1,"resources_js_Pages_Dashboard_Components_ResourceHistory_vue":1,"resources_js_Pages_Dashboard_Dashboard_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_API_Index_vue":1,"resources_js_Pages_API_Partials_ApiTokenManager_vue":1,"resources_js_Pages_Auth_ConfirmPassword_vue":1,"resources_js_Pages_Auth_ForgotPassword_vue":1,"resources_js_Pages_Auth_Login_vue":1,"resources_js_Pages_Auth_Register_vue":1,"resources_js_Pages_Auth_ResetPassword_vue":1,"resources_js_Pages_Auth_TwoFactorChallenge_vue":1,"resources_js_Pages_Auth_VerifyEmail_vue":1,"resources_js_Pages_Bank_Bank_vue":1,"resources_js_Pages_Bank_Components_GoldHistory_vue":1,"resources_js_Pages_Bank_Components_ItemCard_vue":1,"resources_js_Pages_Bank_Components_ResourceButton_vue":1,"resources_js_Pages_Bank_Components_ResourceHistory_vue":1,"resources_js_Pages_Components_NavBar_NavBar_vue":1,"resources_js_Pages_Contribution_Components_ContributionCustom_vue":1,"resources_js_Pages_Contribution_Components_ContributionGold_vue":1,"resources_js_Pages_Contribution_Components_ContributionGuild_vue":1,"resources_js_Pages_Contribution_Components_ContributionItem_vue":1,"resources_js_Pages_Contribution_Components_ItemCard_vue":1,"resources_js_Pages_Contribution_Contribution_vue":1,"resources_js_Pages_Dashboard_Dashboard_vue":1,"resources_js_Pages_Squad_Components_HourSquad_vue":1,"resources_js_Pages_Squad_Components_UserSquad_vue":1,"resources_js_Pages_Squad_Squad_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

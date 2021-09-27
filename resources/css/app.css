@@ -1,3 +1,29 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@font-face {
+    font-family: 'NewWorld';
+    src: url('../img/new-world.ttf') format('truetype');
+}
+
+body {
+    font-family: 'NewWorld', New, sans-serif !important;
+}
+
+::-webkit-scrollbar{
+    width: 7px;
+    height: 7px;
+}
+::-webkit-scrollbar-thumb{
+    background: #151515;
+    border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #474747;
+}
+::-webkit-scrollbar-track{
+    background: #524C4C;
+    border-radius: 0px;
+    box-shadow: inset 0px 0px 0px 0px #F0F0F0;
+}

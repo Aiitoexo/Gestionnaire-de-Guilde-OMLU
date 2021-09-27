@@ -4,11 +4,19 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Contribution;
+use App\Models\DiscordUser;
+use App\Models\DiscordUserRole;
 use App\Models\Gold;
+use App\Models\GoldContribution;
+use App\Models\ItemContribution;
 use App\Models\Resource;
+use App\Models\Role;
 use App\Models\User;
+use App\Models\VoiceChannelTemp;
 use App\Services\GoldService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -61,5 +69,62 @@ class DashboardController extends Controller
         $all_items = Resource::where('category_id', $category)->get()->toJson();
 
         return $all_items;
+    }
+
+    public function addDiscordUser(Request $request)
+    {
+        $all_users = $request['all_users'];
+
+        foreach ($all_users as $user) {
+            $exists = DiscordUser::where('id_discord_user', $user[1])->exists();
+
+            if (!$exists) {
+
+                $discord_user = DiscordUser::create([
+                    'pseudo' => str_contains($user[0], '[OMLU] ') ? substr($user[0], 6) : $user[0],
+                    'id_discord_user' => $user[1],
+                ]);
+
+                foreach ($user[2] as $id) {
+                    $role_exists = Role::where('id_discord_role', $id)->exists();
+
+                    if ($role_exists) {
+
+                        $role_id = Role::where('id_discord_role', $id)->get();
+
+                        $all_squad = Role::whereNotIn('id', [1,2,3])->get();
+
+                        foreach ($all_squad as $squad) {
+                            if ($squad->id === $role_id[0]->id) {
+                                $discord_user->squad_id = $squad->id;
+                                $discord_user->save();
+                            }
+                        }
+
+                        DiscordUserRole::create([
+                            'discord_user_id' => $discord_user->id,
+                            'role_id' => $role_id[0]->id,
+                        ]);
+                    }
+                }
+            }
+        }
+
+        return ['message' => 'Tous les utilisateurs on étais ajouté et mis à jour !'];
+    }
+
+    public function displayContribution()
+    {
+        $contribution_gold = DB::table('gold_contributions')
+            ->join('discord_users', 'gold_contributions.discord_user_id', '=', 'discord_users.id')
+            ->join('roles', 'discord_users.squad_id', '=', 'roles.id')
+            ->get();
+
+        $contribution_item = DB::table('item_contributions')
+            ->join('discord_users', 'item_contributions.discord_user_id', '=', 'discord_users.id')
+            ->join('roles', 'discord_users.squad_id', '=', 'roles.id')
+            ->get();
+
+        return collect()->merge($contribution_gold)->merge($contribution_item);
     }
 }

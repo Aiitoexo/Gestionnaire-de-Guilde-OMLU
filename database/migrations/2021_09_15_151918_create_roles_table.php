@@ -17,6 +17,8 @@ class CreateRolesTable extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->string('id_discord_role')->unique();
+            $table->string('start_hour')->nullable();
+            $table->string('end_hour')->nullable();
             $table->timestamps();
         });
     }

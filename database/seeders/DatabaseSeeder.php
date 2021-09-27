@@ -3,13 +3,17 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\Classe;
 use App\Models\DataResource;
 use App\Models\Gold;
+use App\Models\JobHarvest;
+use App\Models\JobTransformation;
 use App\Models\Rarity;
 use App\Models\Role;
 use App\Models\Source;
 use App\Models\Tier;
 use App\Models\User;
+use App\Models\Weapon;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -155,89 +159,154 @@ class DatabaseSeeder extends Seeder
                 'id_discord_role' => '840270639402188870',
             ],
             [
-                'name' => 'Escadron progress 1',
+                'name' => 'Escadron 1',
                 'id_discord_role' => '883183930797351003',
             ],
             [
-                'name' => 'Escadron progress 2',
+                'name' => 'Escadron 2',
                 'id_discord_role' => '883184282863013919',
             ],
             [
-                'name' => 'Escadron progress 3',
+                'name' => 'Escadron 3',
                 'id_discord_role' => '883184336348799036',
             ],
             [
-                'name' => 'Escadron progress 4',
+                'name' => 'Escadron 4',
                 'id_discord_role' => '883184434872983562',
             ],
             [
-                'name' => 'Escadron progress 5',
+                'name' => 'Escadron 5',
                 'id_discord_role' => '883184490736939099',
             ],
             [
-                'name' => 'Escadron progress 6',
+                'name' => 'Escadron 6',
                 'id_discord_role' => '883184574388142081',
             ],
             [
-                'name' => 'Escadron progress 7',
+                'name' => 'Escadron 7',
                 'id_discord_role' => '883184631212568596',
             ],
             [
-                'name' => 'Escadron progress 8',
+                'name' => 'Escadron 8',
                 'id_discord_role' => '883184688980697098',
             ],
             [
-                'name' => 'Escadron progress 9',
+                'name' => 'Escadron 9',
                 'id_discord_role' => '883184734858014730',
             ],
             [
-                'name' => 'Escadron progress 10',
+                'name' => 'Escadron 10',
                 'id_discord_role' => '883184783511912498',
             ],
             [
-                'name' => 'Escadron progress 11',
+                'name' => 'Escadron 11',
                 'id_discord_role' => '883184852269158450',
             ],
             [
-                'name' => 'Escadron progress 12',
+                'name' => 'Escadron 12',
                 'id_discord_role' => '883184926940364870',
             ],
             [
-                'name' => 'Escadron progress 13',
+                'name' => 'Escadron 13',
                 'id_discord_role' => '883184975153881138',
             ],
             [
-                'name' => 'Escadron progress 14',
+                'name' => 'Escadron 14',
                 'id_discord_role' => '883185027943387176',
             ],
             [
-                'name' => 'Escadron progress 15',
+                'name' => 'Escadron 15',
                 'id_discord_role' => '883185074118463488',
             ],
             [
-                'name' => 'Escadron progress 16',
+                'name' => 'Escadron 16',
                 'id_discord_role' => '883185120692019270',
             ],
             [
-                'name' => 'Escadron progress 17',
+                'name' => 'Escadron 17',
                 'id_discord_role' => '883185187268223007',
             ],
             [
-                'name' => 'Escadron progress 18',
+                'name' => 'Escadron 18',
                 'id_discord_role' => '883185235137818654',
             ],
             [
-                'name' => 'Escadron progress 19',
+                'name' => 'Escadron 19',
                 'id_discord_role' => '883185281870753833',
             ],
             [
-                'name' => 'Escadron progress 20',
+                'name' => 'Escadron 20',
                 'id_discord_role' => '883185336971296779',
             ],
         ];
 
         foreach ($all_role as $role) {
             Role::create($role);
+        }
+
+        $all_weapons = [
+          'Arc',
+          'Baton de Feu',
+          'Baton de Vie',
+          'Épée droite',
+          'Gantelet de glace',
+          'Grande hache',
+          'Hache de jet',
+          'Lance',
+          'Marteau d\'armes',
+          'Mousquet',
+          'Rapière',
+        ];
+
+        for ($i = 0; $i < count($all_weapons); $i++) {
+            Weapon::create([
+               'name' => $all_weapons[$i]
+            ]);
+        }
+
+        $all_jobs_harvest  = [
+            'Récolte',
+            'Extraction',
+            'Dépeçage',
+            'Pêche',
+            'Abattage',
+        ];
+
+        for ($i = 0; $i < count($all_jobs_harvest); $i++) {
+            JobHarvest::create([
+                'name' => $all_jobs_harvest[$i]
+            ]);
+        }
+
+        $all_jobs_transformation  = [
+            'Fabrication d\'armes',
+            'Fabrication d\'armures',
+            'Joaillerie',
+            'Ingénieur',
+            'Art Obscure',
+            'Cuisine',
+            'Ébénisterie',
+        ];
+
+        for ($i = 0; $i < count($all_jobs_transformation); $i++) {
+            JobTransformation::create([
+                'name' => $all_jobs_transformation[$i]
+            ]);
+        }
+
+        $all_classes  = [
+            'Tank',
+            'Heal',
+            'Cac Dexterité',
+            'Cac Force',
+            'Dist Dexterité',
+            'Dist Intel',
+        ];
+
+        for ($i = 0; $i < count($all_classes); $i++) {
+            Classe::create([
+                'name' => $all_classes[$i]
+            ]);
         }
     }
 
