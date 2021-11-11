@@ -1,10 +1,12 @@
 <template>
     <select v-model="start_hour" @change="select_start_hour(squad.id)" class="text-center bg-transparent w-full border-none text-xl rounded font-sans">
+        <option value="" selected disabled>Select</option>
         <option :selected="start_hour === '0'" value="0">00H</option>
         <option :selected="start_hour === i" v-for="i in 23" :value="i">{{ i.length === 1 ? '0' + i : i }}H</option>
     </select>
 
     <select v-model="end_hour" @change="select_end_hour(squad.id)" class="text-center bg-transparent w-full border-none text-xl rounded font-sans">
+        <option value="" selected disabled>Select</option>
         <option :selected="end_hour === '0'" value="0">00H</option>
         <option :selected="end_hour === i" v-for="i in 23" :value="i">{{ i.length === 1  ? '0' + i : i }}H</option>
     </select>

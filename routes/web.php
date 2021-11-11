@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-
+    Route::post('received-contribution-gold', [DashboardController::class, 'receivedContributionGold'])->name('received.gold');
 
     Route::prefix('/banque')->group(function (){
         Route::get('/', [BankController::class, 'index'])->name('bank');

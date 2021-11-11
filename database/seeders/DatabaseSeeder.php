@@ -143,99 +143,99 @@ class DatabaseSeeder extends Seeder
 
         $all_role = [
             [
-                'name' => 'Gouverneur',
+                'name_role' => 'Gouverneur',
                 'id_discord_role' => '839595989777514587',
             ],
             [
-                'name' => 'Consul',
+                'name_role' => 'Consul',
                 'id_discord_role' => '839598015148064808',
             ],
             [
-                'name' => 'Élu(e)',
+                'name_role' => 'Élu(e)',
                 'id_discord_role' => '839334944739819570',
             ],
             [
-                'name' => 'Artisan',
+                'name_role' => 'Artisan',
                 'id_discord_role' => '840270639402188870',
             ],
             [
-                'name' => 'Escadron 1',
+                'name_role' => 'Escadron 1',
                 'id_discord_role' => '883183930797351003',
             ],
             [
-                'name' => 'Escadron 2',
+                'name_role' => 'Escadron 2',
                 'id_discord_role' => '883184282863013919',
             ],
             [
-                'name' => 'Escadron 3',
+                'name_role' => 'Escadron 3',
                 'id_discord_role' => '883184336348799036',
             ],
             [
-                'name' => 'Escadron 4',
+                'name_role' => 'Escadron 4',
                 'id_discord_role' => '883184434872983562',
             ],
             [
-                'name' => 'Escadron 5',
+                'name_role' => 'Escadron 5',
                 'id_discord_role' => '883184490736939099',
             ],
             [
-                'name' => 'Escadron 6',
+                'name_role' => 'Escadron 6',
                 'id_discord_role' => '883184574388142081',
             ],
             [
-                'name' => 'Escadron 7',
+                'name_role' => 'Escadron 7',
                 'id_discord_role' => '883184631212568596',
             ],
             [
-                'name' => 'Escadron 8',
+                'name_role' => 'Escadron 8',
                 'id_discord_role' => '883184688980697098',
             ],
             [
-                'name' => 'Escadron 9',
+                'name_role' => 'Escadron 9',
                 'id_discord_role' => '883184734858014730',
             ],
             [
-                'name' => 'Escadron 10',
+                'name_role' => 'Escadron 10',
                 'id_discord_role' => '883184783511912498',
             ],
             [
-                'name' => 'Escadron 11',
+                'name_role' => 'Escadron 11',
                 'id_discord_role' => '883184852269158450',
             ],
             [
-                'name' => 'Escadron 12',
+                'name_role' => 'Escadron 12',
                 'id_discord_role' => '883184926940364870',
             ],
             [
-                'name' => 'Escadron 13',
+                'name_role' => 'Escadron 13',
                 'id_discord_role' => '883184975153881138',
             ],
             [
-                'name' => 'Escadron 14',
+                'name_role' => 'Escadron 14',
                 'id_discord_role' => '883185027943387176',
             ],
             [
-                'name' => 'Escadron 15',
+                'name_role' => 'Escadron 15',
                 'id_discord_role' => '883185074118463488',
             ],
             [
-                'name' => 'Escadron 16',
+                'name_role' => 'Escadron 16',
                 'id_discord_role' => '883185120692019270',
             ],
             [
-                'name' => 'Escadron 17',
+                'name_role' => 'Escadron 17',
                 'id_discord_role' => '883185187268223007',
             ],
             [
-                'name' => 'Escadron 18',
+                'name_role' => 'Escadron 18',
                 'id_discord_role' => '883185235137818654',
             ],
             [
-                'name' => 'Escadron 19',
+                'name_role' => 'Escadron 19',
                 'id_discord_role' => '883185281870753833',
             ],
             [
-                'name' => 'Escadron 20',
+                'name_role' => 'Escadron 20',
                 'id_discord_role' => '883185336971296779',
             ],
         ];

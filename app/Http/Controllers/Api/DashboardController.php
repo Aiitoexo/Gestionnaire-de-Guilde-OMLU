@@ -92,7 +92,7 @@ class DashboardController extends Controller
 
                         $role_id = Role::where('id_discord_role', $id)->get();
 
-                        $all_squad = Role::whereNotIn('id', [1,2,3])->get();
+                        $all_squad = Role::whereNotIn('id', [1, 2, 3])->get();
 
                         foreach ($all_squad as $squad) {
                             if ($squad->id === $role_id[0]->id) {
@@ -107,6 +107,41 @@ class DashboardController extends Controller
                         ]);
                     }
                 }
+            } elseif ($exists === true) {
+                $discord_user = DiscordUser::where('id_discord_user', $user[1])->get();
+
+                $discord_user[0]->pseudo = str_contains($user[0], '[OMLU] ') ? substr($user[0], 6) : $user[0];
+                $discord_user[0]->id_discord_user = $user[1];
+
+                $discord_user[0]->save();
+
+                $all_roles = DiscordUserRole::where('discord_user_id', $discord_user[0]->id)->get();
+
+                foreach ($all_roles as $role) {
+                    $role->delete();
+                }
+
+                foreach ($user[2] as $id) {
+                    $role_exists = Role::where('id_discord_role', $id)->exists();
+
+                    if ($role_exists) {
+                        $role_id = Role::where('id_discord_role', $id)->get();
+
+                        $all_squad = Role::whereNotIn('id', [1, 2, 3])->get();
+
+                        foreach ($all_squad as $squad) {
+                            if ($squad->id === $role_id[0]->id) {
+                                $discord_user[0]->squad_id = $squad->id;
+                                $discord_user[0]->save();
+                            }
+                        }
+
+                        DiscordUserRole::create([
+                            'discord_user_id' => $discord_user[0]->id,
+                            'role_id' => $role_id[0]->id,
+                        ]);
+                    }
+                }
             }
         }
 
@@ -116,11 +151,14 @@ class DashboardController extends Controller
     public function displayContribution()
     {
         $contribution_gold = DB::table('gold_contributions')
+            ->join('contributions', 'gold_contributions.contribution_id', '=', 'contributions.id')
             ->join('discord_users', 'gold_contributions.discord_user_id', '=', 'discord_users.id')
             ->join('roles', 'discord_users.squad_id', '=', 'roles.id')
             ->get();
 
         $contribution_item = DB::table('item_contributions')
+            ->join('contributions', 'item_contributions.contribution_id', '=', 'contributions.id')
+            ->join('resources', 'item_contributions.resource_id', '=', 'resources.id')
             ->join('discord_users', 'item_contributions.discord_user_id', '=', 'discord_users.id')
             ->join('roles', 'discord_users.squad_id', '=', 'roles.id')
             ->get();

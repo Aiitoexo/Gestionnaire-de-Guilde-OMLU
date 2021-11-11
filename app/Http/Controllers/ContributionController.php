@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Contribution;
 use App\Models\DiscordUser;
 use App\Models\GoldContribution;
+use App\Models\ItemContribution;
 use App\Models\Resource;
 use App\Models\Role;
 use Illuminate\Http\Request;
@@ -52,14 +53,34 @@ class ContributionController extends Controller
                     'quantity_gold_request' => $request['quantity'],
                 ]);
             }
-
-        } elseif ($request['type_contribution'] === 'custom') {
-            dd('custo');
         }
+
+        return back();
     }
 
     public function create_contribution_item(Request $request)
     {
-        dd($request);
+        $contribution_valid = $request->validate([
+            'start_on' => 'required|date',
+            'finished_it' => 'required|date|after:start_on',
+        ]);
+
+        $contribution = Contribution::create($contribution_valid);
+
+        $all_discord_user = DiscordUser::all();
+
+        for ($i = 0; $i < count($request['item_id']); $i++) {
+
+            foreach ($all_discord_user as $discord_user) {
+                ItemContribution::create([
+                    'contribution_id' => $contribution->id,
+                    'discord_user_id' => $discord_user->id,
+                    'resource_id' => $request['item_id'][$i],
+                    'quantity_resource_request' => $request['quantity'][$i],
+                ]);
+            }
+
+        }
+        return back();
     }
 }

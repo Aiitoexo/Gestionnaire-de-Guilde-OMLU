@@ -32,7 +32,7 @@ class CreateItemContributionsTable extends Migration
                 ->on('resources');
 
             $table->decimal('quantity_resource_request');
-            $table->decimal('quantity_resource_received');
+            $table->decimal('quantity_resource_received')->default(0);
 
             $table->boolean('contribution_complete')->default(false);
 

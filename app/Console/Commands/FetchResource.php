@@ -68,6 +68,7 @@ class FetchResource extends Command
 
             $response->json();
 
+//            dd($response);
             $all_items = $response['subjects']['data'];
 
             $category = [];

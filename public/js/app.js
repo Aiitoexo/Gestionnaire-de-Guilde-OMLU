@@ -43590,6 +43590,14 @@ var map = {
 		"./resources/js/Pages/Contribution/Contribution.vue",
 		"resources_js_Pages_Contribution_Contribution_vue"
 	],
+	"./Dashboard/Components/InfoUser": [
+		"./resources/js/Pages/Dashboard/Components/InfoUser.vue",
+		"resources_js_Pages_Dashboard_Components_InfoUser_vue"
+	],
+	"./Dashboard/Components/InfoUser.vue": [
+		"./resources/js/Pages/Dashboard/Components/InfoUser.vue",
+		"resources_js_Pages_Dashboard_Components_InfoUser_vue"
+	],
 	"./Dashboard/Dashboard": [
 		"./resources/js/Pages/Dashboard/Dashboard.vue",
 		"resources_js_Pages_Dashboard_Dashboard_vue"
@@ -43771,7 +43779,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.2","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_API_Index_vue":1,"resources_js_Pages_API_Partials_ApiTokenManager_vue":1,"resources_js_Pages_Auth_ConfirmPassword_vue":1,"resources_js_Pages_Auth_ForgotPassword_vue":1,"resources_js_Pages_Auth_Login_vue":1,"resources_js_Pages_Auth_Register_vue":1,"resources_js_Pages_Auth_ResetPassword_vue":1,"resources_js_Pages_Auth_TwoFactorChallenge_vue":1,"resources_js_Pages_Auth_VerifyEmail_vue":1,"resources_js_Pages_Bank_Bank_vue":1,"resources_js_Pages_Bank_Components_GoldHistory_vue":1,"resources_js_Pages_Bank_Components_ItemCard_vue":1,"resources_js_Pages_Bank_Components_ResourceButton_vue":1,"resources_js_Pages_Bank_Components_ResourceHistory_vue":1,"resources_js_Pages_Components_NavBar_NavBar_vue":1,"resources_js_Pages_Contribution_Components_ContributionCustom_vue":1,"resources_js_Pages_Contribution_Components_ContributionGold_vue":1,"resources_js_Pages_Contribution_Components_ContributionGuild_vue":1,"resources_js_Pages_Contribution_Components_ContributionItem_vue":1,"resources_js_Pages_Contribution_Components_ItemCard_vue":1,"resources_js_Pages_Contribution_Contribution_vue":1,"resources_js_Pages_Dashboard_Dashboard_vue":1,"resources_js_Pages_Squad_Components_HourSquad_vue":1,"resources_js_Pages_Squad_Components_UserSquad_vue":1,"resources_js_Pages_Squad_Squad_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_API_Index_vue":1,"resources_js_Pages_API_Partials_ApiTokenManager_vue":1,"resources_js_Pages_Auth_ConfirmPassword_vue":1,"resources_js_Pages_Auth_ForgotPassword_vue":1,"resources_js_Pages_Auth_Login_vue":1,"resources_js_Pages_Auth_Register_vue":1,"resources_js_Pages_Auth_ResetPassword_vue":1,"resources_js_Pages_Auth_TwoFactorChallenge_vue":1,"resources_js_Pages_Auth_VerifyEmail_vue":1,"resources_js_Pages_Bank_Bank_vue":1,"resources_js_Pages_Bank_Components_GoldHistory_vue":1,"resources_js_Pages_Bank_Components_ItemCard_vue":1,"resources_js_Pages_Bank_Components_ResourceButton_vue":1,"resources_js_Pages_Bank_Components_ResourceHistory_vue":1,"resources_js_Pages_Components_NavBar_NavBar_vue":1,"resources_js_Pages_Contribution_Components_ContributionCustom_vue":1,"resources_js_Pages_Contribution_Components_ContributionGold_vue":1,"resources_js_Pages_Contribution_Components_ContributionGuild_vue":1,"resources_js_Pages_Contribution_Components_ContributionItem_vue":1,"resources_js_Pages_Contribution_Components_ItemCard_vue":1,"resources_js_Pages_Contribution_Contribution_vue":1,"resources_js_Pages_Dashboard_Components_InfoUser_vue":1,"resources_js_Pages_Dashboard_Dashboard_vue":1,"resources_js_Pages_Squad_Components_HourSquad_vue":1,"resources_js_Pages_Squad_Components_UserSquad_vue":1,"resources_js_Pages_Squad_Squad_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

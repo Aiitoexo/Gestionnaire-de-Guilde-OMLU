@@ -26,8 +26,8 @@ class CreateGoldContributionsTable extends Migration
                 ->references('id')
                 ->on('discord_users');
 
-            $table->decimal('quantity_gold_request');
-            $table->decimal('quantity_gold_received')->default(0);
+            $table->integer('quantity_gold_request');
+            $table->integer('quantity_gold_received')->default(0);
 
             $table->boolean('contribution_complete')->default(false);
 

@@ -18,7 +18,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       select_category: 1,
       resourceId: 0,
-      quantity: 0,
+      quantity: null,
       imgValue: null
     };
   },
@@ -74,9 +74,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = ["value"];
-var _hoisted_2 = ["onChange"];
+var _hoisted_2 = {
+  "class": "col-span-4 h-full"
+};
+var _hoisted_3 = ["onChange"];
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "0",
   selected: "",
   disabled: ""
@@ -84,17 +87,19 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_4 = ["value"];
-var _hoisted_5 = ["src"];
-var _hoisted_6 = ["disabled"];
+var _hoisted_5 = ["value"];
+var _hoisted_6 = ["src"];
+var _hoisted_7 = ["disabled"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+    required: "",
     onChange: _cache[0] || (_cache[0] = function () {
       return $options.resetCategory && $options.resetCategory.apply($options, arguments);
     }),
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $data.select_category = $event;
-    })
+    }),
+    "class": "col-span-3 h-full text-xl rounded flex items-center justify-center bg-gray-900 border-none"
   }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.all_categories, function (category) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
       value: category.id
@@ -105,35 +110,40 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* UNKEYED_FRAGMENT */
   ))], 544
   /* HYDRATE_EVENTS, NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.select_category]]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.all_categories, function (category) {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.select_category]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.all_categories, function (category) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [category.id === $data.select_category ? (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("select", {
       key: 0,
+      required: "",
       onChange: function onChange($event) {
         return $options.displayImg(category);
       },
       "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
         return $data.resourceId = $event;
-      })
-    }, [_hoisted_3, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(category.resource, function (resource) {
+      }),
+      "class": "w-full h-14 text-xl rounded flex items-center justify-center bg-gray-900 border-none"
+    }, [_hoisted_4, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(category.resource, function (resource) {
       return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
         value: resource.id,
         key: resource.id
       }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(resource.name), 9
       /* TEXT, PROPS */
-      , _hoisted_4);
+      , _hoisted_5);
     }), 128
     /* KEYED_FRAGMENT */
     ))], 40
     /* PROPS, HYDRATE_EVENTS */
-    , _hoisted_2)), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.resourceId]]) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
+    , _hoisted_3)), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.resourceId]]) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
   }), 256
   /* UNKEYED_FRAGMENT */
-  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  ))]), $data.imgValue !== null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("img", {
+    key: 0,
     src: $data.imgValue,
-    alt: ""
+    alt: "",
+    "class": "col-span-2 w-full h-14 object-center object-cover bg-gray-300 rounded shadow-inner"
   }, null, 8
   /* PROPS */
-  , _hoisted_5), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  , _hoisted_6)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    required: "",
     disabled: this.resourceId <= 0,
     onKeyup: _cache[3] || (_cache[3] = function () {
       return $options.addItem && $options.addItem.apply($options, arguments);
@@ -141,11 +151,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
       return $data.quantity = $event;
     }),
+    placeholder: "0",
     type: "number",
-    min: "1"
+    min: "1",
+    "class": "col-span-3 text-xl rounded flex items-center justify-center bg-gray-900 border-none"
   }, null, 40
   /* PROPS, HYDRATE_EVENTS */
-  , _hoisted_6), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.quantity]])], 64
+  , _hoisted_7), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.quantity]])], 64
   /* STABLE_FRAGMENT */
   );
 }

@@ -1,18 +1,24 @@
 <template>
-    <div>
-        <form @submit.prevent="submitContributionItem">
-            <input v-model="startOn" type="datetime-local">
-            <input v-model="finishedIt" type="datetime-local">
+    <form @submit.prevent="submitContributionItem" class="col-span-10 grid grid-cols-12 gap-4 h-full">
+        <input required v-model="startOn" type="date" class="col-span-4 h-12 text-xl rounded flex items-center justify-center bg-gray-900 border-none">
+        <input required v-model="finishedIt" type="date" class="col-span-4 h-12 text-xl rounded flex items-center justify-center bg-gray-900 border-none">
 
-            <div v-for="i in ItemCount" class="flex">
-                <item-card @resource-id="test" :all_categories="all_categories" :id_item_card="i"></item-card>
+        <div v-for="i in ItemCount" class="col-span-12 grid grid-cols-12 h-14 gap-x-4">
+            <item-card @resource-id="test" :all_categories="all_categories" :id_item_card="i"></item-card>
+        </div>
+
+        <div class="col-span-12 grid grid-cols-2">
+            <div class="col-span-1 h-full">
+                <button @click="addItemCount" type="button" class="px-6 bg-purpleDark-900 text-white py-2 rounded border border-purple-300 h-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </button>
             </div>
 
-            <button @click="addItemCount" type="button">ADD</button>
-
-            <button>Yolo</button>
-        </form>
-    </div>
+            <button class="col-span-1 bg-purpleDark-900 text-white text-2xl py-2 rounded border border-purple-300">Enregistrer</button>
+        </div>
+    </form>
 </template>
 
 <script>
@@ -54,6 +60,10 @@ export default {
             }
 
             this.$inertia.post(route('add.contribution.item'), data)
+            this.ItemCount = 1
+            this.array = []
+            this.startOn = ''
+            this.finishedIt = ''
         },
         test(data) {
 

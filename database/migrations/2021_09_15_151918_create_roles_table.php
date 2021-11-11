@@ -15,7 +15,7 @@ class CreateRolesTable extends Migration
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->string('name_role')->unique();
             $table->string('id_discord_role')->unique();
             $table->string('start_hour')->nullable();
             $table->string('end_hour')->nullable();

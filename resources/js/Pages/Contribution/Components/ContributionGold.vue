@@ -1,9 +1,9 @@
 <template>
-    <form @submit.prevent="addContribution">
-        <input v-model="startOn" type="datetime-local">
-        <input v-model="finishedIt" type="datetime-local">
-        <input v-model="quantityGold" type="number" min="1">
-        <button>Yolo</button>
+    <form @submit.prevent="addContribution" class="col-span-10 grid grid-cols-12 gap-4">
+        <input required v-model="startOn" type="date" class="col-span-4 h-12 text-xl rounded flex items-center justify-center bg-gray-900 border-none">
+        <input required v-model="finishedIt" type="date" class="col-span-4 h-12 text-xl rounded flex items-center justify-center bg-gray-900 border-none">
+        <input required v-model="quantityGold" placeholder="0" type="number" min="1" class="col-span-4 h-12 text-xl rounded flex items-center justify-center bg-gray-900 border-none">
+        <button class="col-span-12 bg-purpleDark-900 text-white text-2xl py-2 rounded border border-purple-300">Enregistrer</button>
     </form>
 </template>
 
@@ -16,7 +16,7 @@ export default {
             typeContribution: this.contribution_type,
             startOn: '',
             finishedIt: '',
-            quantityGold: 0
+            quantityGold: null
         }
     },
     methods: {
@@ -33,6 +33,8 @@ export default {
             this.$inertia.post(route('add.contribution.gold'), data)
 
             this.quantityGold = 0
+            this.startOn = ''
+            this.finishedIt = ''
         }
     }
 }
